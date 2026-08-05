@@ -1,0 +1,60 @@
+generated: '2026-08-05'
+method: probed
+source: live GET of the /.well-known/ discovery surface on every Sharebite host
+summary: >-
+  No /.well-known/ discovery document is published on any Sharebite host. The
+  marketing site (Webflow) 404s every well-known path; the application host
+  app.sharebite.com answers 403 to every unauthenticated request including
+  /.well-known/*, and the api./docs./developers. hostnames do not resolve.
+  Recorded as probe evidence only — no WellKnown pointer is wired, because
+  nothing was found.
+hosts_probed:
+- sharebite.com
+- www.sharebite.com
+- app.sharebite.com
+- status.sharebite.com
+- api.sharebite.com (NXDOMAIN)
+- docs.sharebite.com (NXDOMAIN)
+- developers.sharebite.com (NXDOMAIN)
+- developer.sharebite.com (NXDOMAIN)
+documents:
+- host: https://sharebite.com
+  path: /.well-known/security.txt
+  status: 404
+- host: https://sharebite.com
+  path: /.well-known/openid-configuration
+  status: 404
+- host: https://sharebite.com
+  path: /.well-known/oauth-authorization-server
+  status: 404
+- host: https://sharebite.com
+  path: /.well-known/api-catalog
+  status: 404
+- host: https://sharebite.com
+  path: /.well-known/ai-plugin.json
+  status: 404
+- host: https://sharebite.com
+  path: /.well-known/agent-card.json
+  status: 404
+- host: https://sharebite.com
+  path: /.well-known/agent.json
+  status: 404
+- host: https://app.sharebite.com
+  path: /.well-known/security.txt
+  status: 403
+- host: https://app.sharebite.com
+  path: /.well-known/agent-card.json
+  status: 403
+- host: https://app.sharebite.com
+  path: /.well-known/openid-configuration
+  status: 403
+found: 0
+notes:
+- >-
+  A responsible-disclosure contact IS published, but through the SafeBase trust
+  center at https://trust.sharebite.com/ rather than security.txt — captured in
+  security/sharebite-vulnerability-disclosure.yml.
+- >-
+  An llms.txt IS published at https://sharebite.com/llms.txt (200) — captured
+  verbatim in llms/sharebite-llms.txt. It is a company/marketing profile and
+  names no API surface.

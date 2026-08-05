@@ -1,7 +1,22 @@
 aid: sharebite
 name: Sharebite
-description: 'Sharebite is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Sharebite, Inc. is a New York City-based corporate meal benefits platform,
+  founded in 2016 by Dilip Rao and Mohsin Memon, that lets employers fund and
+  administer employee food programs across office, hybrid, and fully remote
+  workforces in the United States, Canada, and the United Kingdom. Its products
+  are Sharebite Passport (a programmatic virtual meal card usable anywhere Visa
+  or Mastercard is accepted, with per-employee budgets and geographic and
+  time-of-day ordering rules), Sharebite Stations (curated group ordering for
+  office teams), Corporate Catering, and Engage. Every meal ordered on the
+  platform triggers a donated meal through Feeding America and City Harvest
+  partnerships — more than 15 million meals to date. Sharebite publishes a
+  SafeBase/Drata trust center naming SOC 2, PCI DSS, GDPR and CCPA posture, a
+  public status page, and an llms.txt, but it operates no public developer
+  portal: the enterprise integration surface it markets (including a partner
+  integration with Envoy that syncs office attendance data) is reachable only
+  through its contact-sales flow.
+image: https://cdn.prod.website-files.com/679129c320865ab5a29b412c/68d703a414c41ace6156ac22_sharebite-homepage-og.png
 url: https://raw.githubusercontent.com/api-evangelist/sharebite/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +27,16 @@ created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
+- Food
+- Employee Benefits
+- Corporate Meal Benefits
+- Human Resources
+- Workplace
+- Food Delivery
+- Catering
+- Prepaid Cards
+- FoodTech
+- SaaS
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +44,68 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/sharebite-trust-center.yml
+- type: DomainSecurity
+  url: security/sharebite-domain-security.yml
 - type: Website
+  url: https://sharebite.com/
+- type: Support
+  url: https://sharebite.com/support
+- type: Blog
+  url: https://sharebite.com/blog
+- type: SignUp
+  url: https://sharebite.com/get-started
+- type: Login
+  url: https://app.sharebite.com/login
+- type: TermsOfService
+  url: https://sharebite.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://sharebite.com/privacy-policy
+- type: CookiePolicy
+  url: https://sharebite.com/cookie-policy
+- type: Press
+  url: https://sharebite.com/press
+- type: StatusPage
+  url: https://status.sharebite.com/
+- type: LLMsTxt
+  url: llms/sharebite-llms.txt
+- type: Lifecycle
+  url: lifecycle/sharebite-lifecycle.yml
+- type: Conformance
+  url: conformance/sharebite-conformance.yml
+- type: Compliance
+  url: https://trust.sharebite.com/
+- type: VulnerabilityDisclosure
+  url: security/sharebite-vulnerability-disclosure.yml
+- type: Security
+  url: https://trust.sharebite.com/
+- type: SecondaryMarket
   url: https://forgeglobal.com/sharebite_stock/
+x-enrichment:
+  date: '2026-08-05'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Sharebite markets enterprise API integration (its Envoy partner listing syncs
+    office attendance data into meal programs) but publishes no developer surface
+    at all — /developers, /docs, /api and /integrations all 404, none of the 441
+    URLs in its sitemap is a developer page, api./docs./developers.sharebite.com
+    do not resolve, and the only stated route to an integration is the
+    contact-sales form at /get-started.
+  evidence:
+  - url: https://sharebite.com/developers
+    status: 404
+  - url: https://sharebite.com/api
+    status: 404
+  - url: https://sharebite.com/sitemap.xml
+    status: 200
+  - url: https://sharebite.com/get-started
+    status: 200
+  - url: https://app.sharebite.com/openapi.json
+    status: 403
+  checked: '2026-08-05'

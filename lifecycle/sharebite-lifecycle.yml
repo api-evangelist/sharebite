@@ -1,0 +1,34 @@
+generated: '2026-08-05'
+method: searched
+source: https://status.sharebite.com/
+summary: >-
+  Sharebite publishes a public, machine-readable status page for its platform.
+  No public API versioning policy, deprecation policy, Sunset/Deprecation header
+  support, changelog, or SLA document could be found — the company operates no
+  public developer portal, so there is no versioned contract to govern.
+versioning: null
+deprecation: null
+sla: null
+status_page: https://status.sharebite.com/
+status_page_api: https://status.sharebite.com/api/v2/summary.json
+status_page_components:
+- name: Web Ordering Platform
+  status: operational
+- name: Marketing Website
+  status: operational
+- name: Passport Service
+  status: operational
+deprecated_operations: []
+x-evidence:
+- url: https://status.sharebite.com/
+  http_status: 200
+- url: https://status.sharebite.com/api/v2/summary.json
+  http_status: 200
+  detail: >-
+    Statuspage-compatible JSON summary; page id 01KKA38CG30HZMM7BCV819T5FD,
+    "All Systems Operational", 3 components, 0 open incidents as of the probe.
+- url: https://sharebite.com/sitemap.xml
+  http_status: 200
+  detail: >-
+    441 URLs, none of which is a changelog, release-notes, versioning or
+    deprecation page.

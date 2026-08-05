@@ -1,0 +1,50 @@
+generated: '2026-08-05'
+method: searched
+probe: true
+source: https://trust.sharebite.com/
+url: https://trust.sharebite.com/
+platform: SafeBase (Drata)
+certifications:
+- SOC 2
+- PCI DSS
+- GDPR
+- CCPA
+sections:
+- Compliance
+- Data Security
+- App Security
+- Infrastructure
+- Access Control
+- Multi-Factor Authentication
+- Endpoint Security
+- Network Security
+- Physical & Environment
+- Corporate Security
+- Continuous Monitoring
+- Risk Assessments
+- Incident Response
+- Business Continuity Management System (BCMS)
+- Business Continuity Plan (BCP)
+- Disaster Recovery Plan (DRP)
+- Change Management Program
+- Asset Management
+- Data Privacy
+- ESG
+- AI Transparency Statement
+- Legal
+documents:
+- General Terms and Conditions
+- Catering and Individual Ordering Service Schedule
+- Group Ordering Service Schedule
+- Passport Service Schedule
+- AI Transparency Statement
+evidence:
+- source: https://trust.sharebite.com/
+  http_status: 200
+  keywords:
+  - soc 2
+  - pci dss
+  - trust center
+  - gdpr
+  - ccpa
+  - penetration testing

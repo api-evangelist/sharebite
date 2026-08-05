@@ -1,0 +1,57 @@
+generated: '2026-08-05'
+method: searched
+source: https://trust.sharebite.com/
+summary: >-
+  Sharebite publishes an organizational compliance posture through its
+  SafeBase/Drata trust center, but no technical API conformance can be asserted:
+  there is no public OpenAPI, GraphQL SDL, AsyncAPI, or documented auth scheme
+  to evaluate, so every protocol-level standard below is recorded as unknown
+  rather than false.
+standards:
+- id: soc2-type2
+  conforms: true
+  evidence: >-
+    SOC 2 named as a compliance item on https://trust.sharebite.com/; Sharebite's
+    own llms.txt states "SOC 2 Type 2 certified with PCI compliance".
+- id: pci-dss
+  conforms: true
+  evidence: PCI DSS named as a compliance item on https://trust.sharebite.com/
+- id: gdpr
+  conforms: true
+  evidence: GDPR named as a compliance item on https://trust.sharebite.com/
+- id: ccpa
+  conforms: true
+  evidence: CCPA named as a compliance item on https://trust.sharebite.com/
+- id: oauth2
+  conforms: unknown
+  evidence: >-
+    No public OpenAPI securitySchemes and no public auth documentation;
+    /.well-known/oauth-authorization-server 404s on every host.
+- id: oidc
+  conforms: unknown
+  evidence: /.well-known/openid-configuration 404s on every Sharebite host.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No public OpenAPI or error reference to evaluate.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: >-
+    /.well-known/security.txt returns 404 on sharebite.com and 403 on
+    app.sharebite.com. A responsible-disclosure contact is instead published on
+    the trust center.
+- id: rfc8594-sunset-header
+  conforms: unknown
+  evidence: No public API to observe response headers on.
+- id: llms-txt
+  conforms: true
+  evidence: >-
+    https://sharebite.com/llms.txt returns 200 with a well-formed llms.txt
+    (H1 + blockquote summary + sectioned content); saved verbatim to
+    llms/sharebite-llms.txt.
+x-evidence:
+- url: https://trust.sharebite.com/
+  http_status: 200
+- url: https://sharebite.com/llms.txt
+  http_status: 200
+- url: https://sharebite.com/.well-known/openid-configuration
+  http_status: 404
