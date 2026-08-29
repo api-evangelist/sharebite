@@ -16,6 +16,17 @@ description: >-
   portal: the enterprise integration surface it markets (including a partner
   integration with Envoy that syncs office attendance data) is reachable only
   through its contact-sales flow.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/679129c320865ab5a29b412c/68d703a414c41ace6156ac22_sharebite-homepage-og.png
 url: https://raw.githubusercontent.com/api-evangelist/sharebite/refs/heads/main/apis.yml
 x-type: company
